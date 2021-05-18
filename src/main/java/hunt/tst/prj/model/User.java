@@ -43,7 +43,7 @@ public class User extends BaseModel  {
 		
 	public User() {
 		super();
-		this.deleted=false;
+		this.deleted = false;
 	}
 
 
