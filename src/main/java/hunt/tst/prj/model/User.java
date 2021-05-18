@@ -54,7 +54,7 @@ public class User extends BaseModel  {
 		this.birthDate = birthDate;
 		this.inn = inn;
 		this.enterprises = enterprises;
-		this.deleted=false;
+		this.deleted = false;
 	}
 
 
