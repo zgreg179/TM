@@ -29,7 +29,7 @@ public class UserController {
 	@Autowired
 	public UserController(UserService userService) {
 		
-		this.userService= userService;
+		this.userService = userService;
 	}
 	
 	@RequestMapping(value = "/user/{inn}", method = RequestMethod.GET)
