@@ -34,7 +34,7 @@ public class Enterprise extends BaseModel  {
     @JoinTable(
         name = "Enterprise_User", 
         joinColumns = { @JoinColumn(name = "enterprise_id", referencedColumnName = "ID") }, 
-        inverseJoinColumns = { @JoinColumn(name ="user_id" , referencedColumnName = "ID") }
+        inverseJoinColumns = { @JoinColumn(name = "user_id" , referencedColumnName = "ID") }
     )
 	private Set<User> users = new HashSet<>();
 			
