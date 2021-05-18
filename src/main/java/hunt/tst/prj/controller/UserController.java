@@ -36,7 +36,7 @@ public class UserController {
 	public ResponseEntity<User> getUser(@PathVariable(value = "inn") String inn) throws EntityNotFoundException {
 		   
 		   User _user=this.userService.getUserByInn(inn);
-	       if (_user==null) {
+	       if (_user == null) {
 	           throw new EntityNotFoundException();
 	       }
 		return new ResponseEntity<User>(_user, HttpStatus.OK);
@@ -51,8 +51,8 @@ public class UserController {
 	@RequestMapping(value = "/add", method = RequestMethod.POST)	
     public ResponseEntity<User> addUser(@RequestBody User user) throws EntityNotFoundException {
 		
-    	User _user=this.userService.addUser(user);
-    	if (_user==null) {
+    	User _user = this.userService.addUser(user);
+    	if (_user == null) {
 	           throw new EntityNotFoundException();
 	     }
 		return new ResponseEntity<User>(_user, HttpStatus.OK);
@@ -61,8 +61,8 @@ public class UserController {
 	@RequestMapping(value = "/upd", method = RequestMethod.POST)
     public ResponseEntity<User> updUser(@RequestBody User user) throws EntityNotFoundException {
     	
-    	User _user=this.userService.updUser(user);
-    	if (_user==null) {
+    	User _user = this.userService.updUser(user);
+    	if (_user == null) {
 	           throw new EntityNotFoundException();
 	     }
 		return new ResponseEntity<User>(_user, HttpStatus.OK);
@@ -71,11 +71,11 @@ public class UserController {
 	@RequestMapping(value = "/del/{inn}}", method = RequestMethod.GET)	
     public ResponseEntity<User> delUser(@PathVariable(value = "inn") String inn) throws EntityNotFoundException {
 		
-		User _user=this.userService.getUserByInn(inn);
-	    if (_user==null) {
+		User _user = this.userService.getUserByInn(inn);
+	    if (_user == null) {
 	           throw new EntityNotFoundException();
 	     }
-	    _user=this.userService.delUser(_user);
+	    _user = this.userService.delUser(_user);
 		
 	    return new ResponseEntity<User>(_user, HttpStatus.OK);
 	}  
