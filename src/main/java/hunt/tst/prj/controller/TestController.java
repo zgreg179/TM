@@ -18,7 +18,7 @@ public class TestController {
 	@GetMapping("/question")	
 	public String[]  getEnterprise()  {
 		   
-		   String[] ar={"Вопрос1","Вопрос2","Вопрос3","Вопрос4","Вопрос5"};
+		   String[] ar = {"Вопрос1","Вопрос2","Вопрос3","Вопрос4","Вопрос5"};
 		   
 		   return ar;
 	} 
