@@ -34,8 +34,8 @@ public class EnterpriseController {
 	@RequestMapping(value = "/get/{edrpo}", method = RequestMethod.GET)	
 	public ResponseEntity<Enterprise>  getEnterprise(@PathVariable(value = "edrpo") String edrpo) throws EntityNotFoundException {
 		   
-		   Enterprise _enterprise=this.enterpriseService.getEnterprise(edrpo);
-		   if (_enterprise==null) {
+		   Enterprise _enterprise = this.enterpriseService.getEnterprise(edrpo);
+		   if (_enterprise == null) {
 	           throw new EntityNotFoundException();
 	       }
 		   
@@ -45,18 +45,18 @@ public class EnterpriseController {
 	@RequestMapping(value = "/users/{edrpo}", method = RequestMethod.GET)
 	public ResponseEntity<Set<User>> getUser(@PathVariable(value = "edrpo") String edpro) throws EntityNotFoundException {
 		   
-		   Set<User> users =this.enterpriseService.getEnterprise(edpro).getUsers();
+		   Set<User> users = this.enterpriseService.getEnterprise(edpro).getUsers();
 		   if (users.isEmpty()) {
 	           throw new EntityNotFoundException();
 	       }
 		   
-		   return new ResponseEntity<Set<User>>(users, HttpStatus.OK);
+	       return new ResponseEntity<Set<User>>(users, HttpStatus.OK);
 	} 
 	
    @RequestMapping(value = "/change", method = RequestMethod.POST)
    public ResponseEntity<User> changeJob(@RequestBody ChangeJobDTO dto) {
 	   
-	   User _user=this.enterpriseService.changeEnterprise(dto);
+	   User _user = this.enterpriseService.changeEnterprise(dto);
 	   
 	   return new ResponseEntity<User>(_user, HttpStatus.OK);
 	} 
