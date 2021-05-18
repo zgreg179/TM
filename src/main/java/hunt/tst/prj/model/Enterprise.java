@@ -23,10 +23,10 @@ public class Enterprise extends BaseModel  {
 	@Column(name = "id", updatable = false, nullable = false)
 	private Long id;
 	
-	@Column(length=255)
+	@Column(length = 255)
 	private String name;
 	
-	@Column(length=8, unique=true)
+	@Column(length = 8, unique=true)
 	private String edrpo;
 	
 	@JsonIgnoreProperties({"hibernateLazyInitializer", "handler", "enterprises"})
@@ -41,7 +41,7 @@ public class Enterprise extends BaseModel  {
 	public Enterprise() {
 		
 		super();
-		this.deleted=false;
+		this.deleted = false;
 	}
 
 
