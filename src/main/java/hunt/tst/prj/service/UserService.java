@@ -31,7 +31,7 @@ public class UserService {
    
    public List<User> getAll(int pageSize, int pageNum) {
 		
-	  List<User> users= this.userRepository.findAll().stream().filter(o->!o.getDeleted())
+	  List<User> users = this.userRepository.findAll().stream().filter(o->!o.getDeleted())
 			  .skip((pageSize-1)*pageNum)
 		      .limit(pageNum)
 		      .collect(Collectors.toList());
@@ -41,7 +41,7 @@ public class UserService {
 	
 	public User addUser(User user) {
 		
-		User newUser=null;
+		User newUser = null;
 		
 		try {
 			
@@ -61,7 +61,7 @@ public class UserService {
 	
 	public User delUser(User user) {
 		
-		User _user=this.userRepository.findByInn(user.getInn());
+		User _user = this.userRepository.findByInn(user.getInn());
 		_user.setDeleted(true);
 		this.userRepository.save(_user);
 	
