@@ -25,13 +25,13 @@ public class User extends BaseModel  {
 	@Column(name = "id", updatable = false, nullable = false)
 	private Long id;
 	
-	@Column(length=255)
+	@Column(length = 255)
 	private String fio;
 	
 	@Convert(converter = JpaLocalDateConverter.class)
 	private LocalDate birthDate;
 	
-	@Column(length=10, unique=true)
+	@Column(length = 10, unique = true)
 	private String inn;
 	
 		
