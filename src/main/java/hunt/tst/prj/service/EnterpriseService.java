@@ -21,8 +21,8 @@ public class EnterpriseService {
 	@Autowired
 	public EnterpriseService(EnterpriseRepository enterpriseRepository,UserRepository userRepository ) {
 		
-		this.enterpriseRepository=enterpriseRepository;
-		this.userRepository=userRepository;
+		this.enterpriseRepository = enterpriseRepository;
+		this.userRepository = userRepository;
 	}
 	
    public Enterprise getEnterprise(String edpro) {
@@ -35,7 +35,7 @@ public class EnterpriseService {
    
     public Enterprise addEnterprise(Enterprise enterprise) {
 		
-    	Enterprise newEntreprise=null;
+    	Enterprise newEntreprise = null;
 		try {
 			newEntreprise=this.enterpriseRepository.save(enterprise);
 		}catch(Exception e) {
