@@ -50,7 +50,7 @@ public class Enterprise extends BaseModel  {
 		this.name = name;
 		this.edrpo = edrpo;
 		this.users = users;
-		this.deleted=false;
+		this.deleted = false;
 	}
 
 
