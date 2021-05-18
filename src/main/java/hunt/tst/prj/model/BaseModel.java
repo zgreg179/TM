@@ -5,7 +5,7 @@ import javax.persistence.MappedSuperclass;
 @MappedSuperclass
 public class BaseModel {
 
-	protected Boolean deleted;
+	protected Boolean deleted = false;
 
 	public BaseModel() {
 		super();
