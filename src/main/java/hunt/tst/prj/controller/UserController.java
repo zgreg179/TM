@@ -71,7 +71,7 @@ public class UserController {
 	@RequestMapping(value = "/del/{inn}}", method = RequestMethod.GET)	
     public ResponseEntity<User> delUser(@PathVariable(value = "inn") String inn) throws EntityNotFoundException {
 		
-		User _user = this.userService.getUserByInn(inn);
+	    User _user = this.userService.getUserByInn(inn);
 	    if (_user == null) {
 	           throw new EntityNotFoundException();
 	     }
@@ -88,5 +88,5 @@ public class UserController {
 	    if(allUser.isEmpty()) 
 	    	 throw new EntityNotFoundException();
     	return new ResponseEntity<List<User>>(allUser, HttpStatus.OK);
-	} 
+    } 
 }
