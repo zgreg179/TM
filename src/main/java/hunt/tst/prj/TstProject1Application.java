@@ -31,25 +31,25 @@ public class TstProject1Application {
 	InitializingBean sendDatabase() {
 	    return () -> {
 	        
-	    	User u1=new User("FIO1", LocalDate.now(), "INN1111111", new HashSet<>());
-	        User u2=new User("FIO2", LocalDate.now(), "INN2222222", new HashSet<>());
-	        User u3=new User("FIO3", LocalDate.now(), "INN3333333", new HashSet<>());
-	        User u4=new User("FIO4", LocalDate.now(), "INN4444444", new HashSet<>());
-	        User u5=new User("FIO5", LocalDate.now(), "INN5555555", new HashSet<>());
+	    	User u1 = new User("FIO1", LocalDate.now(), "INN1111111", new HashSet<>());
+	        User u2 = new User("FIO2", LocalDate.now(), "INN2222222", new HashSet<>());
+	        User u3 = new User("FIO3", LocalDate.now(), "INN3333333", new HashSet<>());
+	        User u4 = new User("FIO4", LocalDate.now(), "INN4444444", new HashSet<>());
+	        User u5 = new User("FIO5", LocalDate.now(), "INN5555555", new HashSet<>());
 	        	        
-	    	u1=userRepository.save(u1);
-	    	u2=userRepository.save(u2);
-	    	u3=userRepository.save(u3);
-	    	u4=userRepository.save(u4);
-	    	u5=userRepository.save(u5);
+	    	u1 = userRepository.save(u1);
+	    	u2 = userRepository.save(u2);
+	    	u3 = userRepository.save(u3);
+	    	u4 = userRepository.save(u4);
+	    	u5 = userRepository.save(u5);
 	        
-	    	Enterprise entr1=new Enterprise("ENTR11", "EDPRO11", new HashSet<>());
-	    	Enterprise entr2=new Enterprise("ENTR22", "EDPRO22", new HashSet<>());
-	    	Enterprise entr3=new Enterprise("ENTR33", "EDPRO33", new HashSet<>());
+	    	Enterprise entr1 = new Enterprise("ENTR11", "EDPRO11", new HashSet<>());
+	    	Enterprise entr2 = new Enterprise("ENTR22", "EDPRO22", new HashSet<>());
+	    	Enterprise entr3 = new Enterprise("ENTR33", "EDPRO33", new HashSet<>());
 	    		    	
-	        entr1=enterpriseRepository.save(entr1);
-	        entr2=enterpriseRepository.save(entr2);
-	        entr3=enterpriseRepository.save(entr3);
+	        entr1 = enterpriseRepository.save(entr1);
+	        entr2 = enterpriseRepository.save(entr2);
+	        entr3 = enterpriseRepository.save(entr3);
 	        
 	        entr1.getUsers().add(u1);
 	        entr2.getUsers().add(u1);
