@@ -20,13 +20,13 @@ public class ApiController {
 	@Autowired
 	public ApiController(OuterApiService outerApiService) {
 		
-		this.outerApiService=outerApiService;
+		this.outerApiService = outerApiService;
 	}
 	
 	@GetMapping("/api/v1/api")
 	public ResponseEntity<String> getResource() throws OuterApiException {
 		
-		String res=this.outerApiService.makeRequest();
+		String res = this.outerApiService.makeRequest();
 	       	       
 		return new ResponseEntity<String>(res, HttpStatus.OK);
 	} 
