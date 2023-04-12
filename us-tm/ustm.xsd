@@ -1,0 +1,483 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="trademark-applications-daily">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="version"/>
+                <xs:element ref="creation-datetime"/>
+                <xs:element ref="application-information"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="version">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="version-no"/>
+                <xs:element ref="version-date"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="version-no" type="xs:string"/>
+    <xs:element name="version-date" type="xs:string"/>
+    <xs:element name="creation-datetime" type="xs:string"/>
+    <xs:element name="application-information">
+        <xs:complexType>
+            <xs:choice>
+                <xs:element ref="data-available-code"/>
+                <xs:element maxOccurs="unbounded" minOccurs="0" ref="file-segments"/>
+            </xs:choice>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="data-available-code" type="xs:string"/>
+    <xs:element name="file-segments">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element maxOccurs="unbounded" minOccurs="0" ref="file-segment"/>
+                <xs:element maxOccurs="unbounded" minOccurs="0" ref="action-keys"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="file-segment" type="xs:string"/>
+    <xs:element name="action-keys">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element maxOccurs="unbounded" minOccurs="0" ref="action-key"/>
+                <xs:element maxOccurs="unbounded" minOccurs="0" ref="case-file"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="action-key" type="xs:string"/>
+    <xs:element name="case-file">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="serial-number"/>
+                <xs:element minOccurs="0" ref="registration-number"/>
+                <xs:element minOccurs="0" ref="transaction-date"/>
+                <xs:element minOccurs="0" ref="case-file-header"/>
+                <xs:element minOccurs="0" ref="case-file-statements"/>
+                <xs:element minOccurs="0" ref="case-file-event-statements"/>
+                <xs:element minOccurs="0" ref="prior-registration-applications"/>
+                <xs:element minOccurs="0" ref="foreign-applications"/>
+                <xs:element minOccurs="0" ref="classifications"/>
+                <xs:element minOccurs="0" ref="correspondent"/>
+                <xs:element minOccurs="0" ref="case-file-owners"/>
+                <xs:element minOccurs="0" ref="design-searches"/>
+                <xs:element minOccurs="0" ref="international-registration"/>
+                <xs:element minOccurs="0" ref="madrid-international-filing-requests"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="serial-number" type="xs:string"/>
+    <xs:element name="registration-number" type="xs:string"/>
+    <xs:element name="transaction-date" type="xs:string"/>
+    <xs:element name="case-file-header">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element minOccurs="0" ref="filing-date"/>
+                <xs:element minOccurs="0" ref="registration-date"/>
+                <xs:element minOccurs="0" ref="status-code"/>
+                <xs:element minOccurs="0" ref="status-date"/>
+                <xs:element minOccurs="0" ref="mark-identification"/>
+                <xs:element minOccurs="0" ref="mark-drawing-code"/>
+                <xs:element minOccurs="0" ref="published-for-opposition-date"/>
+                <xs:element minOccurs="0" ref="amend-to-register-date"/>
+                <xs:element minOccurs="0" ref="abandonment-date"/>
+                <xs:element minOccurs="0" ref="cancellation-code"/>
+                <xs:element minOccurs="0" ref="cancellation-date"/>
+                <xs:element minOccurs="0" ref="republished-12c-date"/>
+                <xs:element minOccurs="0" ref="domestic-representative-name"/>
+                <xs:element minOccurs="0" ref="attorney-docket-number"/>
+                <xs:element minOccurs="0" ref="attorney-name"/>
+                <xs:element minOccurs="0" ref="principal-register-amended-in"/>
+                <xs:element minOccurs="0" ref="supplemental-register-amended-in"/>
+                <xs:element minOccurs="0" ref="trademark-in"/>
+                <xs:element minOccurs="0" ref="collective-trademark-in"/>
+                <xs:element minOccurs="0" ref="service-mark-in"/>
+                <xs:element minOccurs="0" ref="collective-service-mark-in"/>
+                <xs:element minOccurs="0" ref="collective-membership-mark-in"/>
+                <xs:element minOccurs="0" ref="certification-mark-in"/>
+                <xs:element minOccurs="0" ref="cancellation-pending-in"/>
+                <xs:element minOccurs="0" ref="published-concurrent-in"/>
+                <xs:element minOccurs="0" ref="concurrent-use-in"/>
+                <xs:element minOccurs="0" ref="concurrent-use-proceeding-in"/>
+                <xs:element minOccurs="0" ref="interference-pending-in"/>
+                <xs:element minOccurs="0" ref="opposition-pending-in"/>
+                <xs:element minOccurs="0" ref="section-12c-in"/>
+                <xs:element minOccurs="0" ref="section-2f-in"/>
+                <xs:element minOccurs="0" ref="section-2f-in-part-in"/>
+                <xs:element minOccurs="0" ref="renewal-filed-in"/>
+                <xs:element minOccurs="0" ref="section-8-filed-in"/>
+                <xs:element minOccurs="0" ref="section-8-partial-accept-in"/>
+                <xs:element minOccurs="0" ref="section-8-accepted-in"/>
+                <xs:element minOccurs="0" ref="section-15-acknowledged-in"/>
+                <xs:element minOccurs="0" ref="section-15-filed-in"/>
+                <xs:element minOccurs="0" ref="supplemental-register-in"/>
+                <xs:element minOccurs="0" ref="foreign-priority-in"/>
+                <xs:element minOccurs="0" ref="change-registration-in"/>
+                <xs:element minOccurs="0" ref="intent-to-use-in"/>
+                <xs:element minOccurs="0" ref="intent-to-use-current-in"/>
+                <xs:element minOccurs="0" ref="filed-as-use-application-in"/>
+                <xs:element minOccurs="0" ref="amended-to-use-application-in"/>
+                <xs:element minOccurs="0" ref="use-application-currently-in"/>
+                <xs:element minOccurs="0" ref="amended-to-itu-application-in"/>
+                <xs:element minOccurs="0" ref="filing-basis-filed-as-44d-in"/>
+                <xs:element minOccurs="0" ref="amended-to-44d-application-in"/>
+                <xs:element minOccurs="0" ref="filing-basis-current-44d-in"/>
+                <xs:element minOccurs="0" ref="filing-basis-filed-as-44e-in"/>
+                <xs:element minOccurs="0" ref="filing-basis-current-44e-in"/>
+                <xs:element minOccurs="0" ref="amended-to-44e-application-in"/>
+                <xs:element minOccurs="0" ref="without-basis-currently-in"/>
+                <xs:element minOccurs="0" ref="filing-current-no-basis-in"/>
+                <xs:element minOccurs="0" ref="color-drawing-filed-in"/>
+                <xs:element minOccurs="0" ref="color-drawing-current-in"/>
+                <xs:element minOccurs="0" ref="drawing-3d-filed-in"/>
+                <xs:element minOccurs="0" ref="drawing-3d-current-in"/>
+                <xs:element minOccurs="0" ref="standard-characters-claimed-in"/>
+                <xs:element minOccurs="0" ref="filing-basis-filed-as-66a-in"/>
+                <xs:element minOccurs="0" ref="filing-basis-current-66a-in"/>
+                <xs:element minOccurs="0" ref="renewal-date"/>
+                <xs:element minOccurs="0" ref="law-office-assigned-location-code"/>
+                <xs:element minOccurs="0" ref="current-location"/>
+                <xs:element minOccurs="0" ref="location-date"/>
+                <xs:element minOccurs="0" ref="employee-name"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="filing-date" type="xs:string"/>
+    <xs:element name="registration-date" type="xs:string"/>
+    <xs:element name="status-code" type="xs:string"/>
+    <xs:element name="status-date" type="xs:string"/>
+    <xs:element name="mark-identification" type="xs:string"/>
+    <xs:element name="mark-drawing-code" type="xs:string"/>
+    <xs:element name="published-for-opposition-date" type="xs:string"/>
+    <xs:element name="amend-to-register-date" type="xs:string"/>
+    <xs:element name="abandonment-date" type="xs:string"/>
+    <xs:element name="cancellation-code" type="xs:string"/>
+    <xs:element name="cancellation-date" type="xs:string"/>
+    <xs:element name="republished-12c-date" type="xs:string"/>
+    <xs:element name="domestic-representative-name" type="xs:string"/>
+    <xs:element name="attorney-docket-number" type="xs:string"/>
+    <xs:element name="attorney-name" type="xs:string"/>
+    <xs:element name="principal-register-amended-in" type="xs:string"/>
+    <xs:element name="supplemental-register-amended-in" type="xs:string"/>
+    <xs:element name="trademark-in" type="xs:string"/>
+    <xs:element name="collective-trademark-in" type="xs:string"/>
+    <xs:element name="service-mark-in" type="xs:string"/>
+    <xs:element name="collective-service-mark-in" type="xs:string"/>
+    <xs:element name="collective-membership-mark-in" type="xs:string"/>
+    <xs:element name="certification-mark-in" type="xs:string"/>
+    <xs:element name="cancellation-pending-in" type="xs:string"/>
+    <xs:element name="published-concurrent-in" type="xs:string"/>
+    <xs:element name="concurrent-use-in" type="xs:string"/>
+    <xs:element name="concurrent-use-proceeding-in" type="xs:string"/>
+    <xs:element name="interference-pending-in" type="xs:string"/>
+    <xs:element name="opposition-pending-in" type="xs:string"/>
+    <xs:element name="section-12c-in" type="xs:string"/>
+    <xs:element name="section-2f-in" type="xs:string"/>
+    <xs:element name="section-2f-in-part-in" type="xs:string"/>
+    <xs:element name="renewal-filed-in" type="xs:string"/>
+    <xs:element name="section-8-filed-in" type="xs:string"/>
+    <xs:element name="section-8-partial-accept-in" type="xs:string"/>
+    <xs:element name="section-8-accepted-in" type="xs:string"/>
+    <xs:element name="section-15-acknowledged-in" type="xs:string"/>
+    <xs:element name="section-15-filed-in" type="xs:string"/>
+    <xs:element name="supplemental-register-in" type="xs:string"/>
+    <xs:element name="foreign-priority-in" type="xs:string"/>
+    <xs:element name="change-registration-in" type="xs:string"/>
+    <xs:element name="intent-to-use-in" type="xs:string"/>
+    <xs:element name="intent-to-use-current-in" type="xs:string"/>
+    <xs:element name="filed-as-use-application-in" type="xs:string"/>
+    <xs:element name="amended-to-use-application-in" type="xs:string"/>
+    <xs:element name="use-application-currently-in" type="xs:string"/>
+    <xs:element name="amended-to-itu-application-in" type="xs:string"/>
+    <xs:element name="filing-basis-filed-as-44d-in" type="xs:string"/>
+    <xs:element name="amended-to-44d-application-in" type="xs:string"/>
+    <xs:element name="filing-basis-current-44d-in" type="xs:string"/>
+    <xs:element name="filing-basis-filed-as-44e-in" type="xs:string"/>
+    <xs:element name="amended-to-44e-application-in" type="xs:string"/>
+    <xs:element name="filing-basis-current-44e-in" type="xs:string"/>
+    <xs:element name="without-basis-currently-in" type="xs:string"/>
+    <xs:element name="filing-current-no-basis-in" type="xs:string"/>
+    <xs:element name="color-drawing-filed-in" type="xs:string"/>
+    <xs:element name="color-drawing-current-in" type="xs:string"/>
+    <xs:element name="drawing-3d-filed-in" type="xs:string"/>
+    <xs:element name="drawing-3d-current-in" type="xs:string"/>
+    <xs:element name="standard-characters-claimed-in" type="xs:string"/>
+    <xs:element name="filing-basis-filed-as-66a-in" type="xs:string"/>
+    <xs:element name="filing-basis-current-66a-in" type="xs:string"/>
+    <xs:element name="renewal-date" type="xs:string"/>
+    <xs:element name="law-office-assigned-location-code" type="xs:string"/>
+    <xs:element name="current-location" type="xs:string"/>
+    <xs:element name="location-date" type="xs:string"/>
+    <xs:element name="employee-name" type="xs:string"/>
+    <xs:element name="case-file-statements">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element maxOccurs="unbounded" minOccurs="0" ref="case-file-statement"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="case-file-statement">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element minOccurs="0" ref="type-code"/>
+                <xs:element maxOccurs="unbounded" minOccurs="0" ref="text"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="type-code" type="xs:string"/>
+    <xs:element name="text" type="xs:string"/>
+    <xs:element name="case-file-event-statements">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element maxOccurs="unbounded" minOccurs="0" ref="case-file-event-statement"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="case-file-event-statement">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element minOccurs="0" ref="code"/>
+                <xs:element minOccurs="0" ref="type"/>
+                <xs:element minOccurs="0" ref="description-text"/>
+                <xs:element minOccurs="0" ref="date"/>
+                <xs:element minOccurs="0" ref="number"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="code" type="xs:string"/>
+    <xs:element name="type" type="xs:string"/>
+    <xs:element name="description-text" type="xs:string"/>
+    <xs:element name="date" type="xs:string"/>
+    <xs:element name="number" type="xs:string"/>
+    <xs:element name="prior-registration-applications">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element maxOccurs="unbounded" minOccurs="0" ref="other-related-in"/>
+                <xs:element maxOccurs="unbounded" minOccurs="0" ref="prior-registration-application"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="other-related-in" type="xs:string"/>
+    <xs:element name="prior-registration-application">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element minOccurs="0" ref="relationship-type"/>
+                <xs:element minOccurs="0" ref="number"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="relationship-type" type="xs:string"/>
+    <xs:element name="foreign-applications">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element maxOccurs="unbounded" minOccurs="0" ref="foreign-application"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="foreign-application">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element minOccurs="0" ref="filing-date"/>
+                <xs:element minOccurs="0" ref="registration-date"/>
+                <xs:element minOccurs="0" ref="registration-expiration-date"/>
+                <xs:element minOccurs="0" ref="registration-renewal-date"/>
+                <xs:element minOccurs="0" ref="registration-renewal-expiration-date"/>
+                <xs:element minOccurs="0" ref="entry-number"/>
+                <xs:element minOccurs="0" ref="application-number"/>
+                <xs:element minOccurs="0" ref="country"/>
+                <xs:element minOccurs="0" ref="other"/>
+                <xs:element minOccurs="0" ref="registration-number"/>
+                <xs:element minOccurs="0" ref="renewal-number"/>
+                <xs:element minOccurs="0" ref="foreign-priority-claim-in"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="registration-expiration-date" type="xs:string"/>
+    <xs:element name="registration-renewal-date" type="xs:string"/>
+    <xs:element name="registration-renewal-expiration-date" type="xs:string"/>
+    <xs:element name="entry-number" type="xs:string"/>
+    <xs:element name="application-number" type="xs:string"/>
+    <xs:element name="country" type="xs:string"/>
+    <xs:element name="renewal-number" type="xs:string"/>
+    <xs:element name="foreign-priority-claim-in" type="xs:string"/>
+    <xs:element name="classifications">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element maxOccurs="unbounded" minOccurs="0" ref="classification"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="classification">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element minOccurs="0" ref="international-code-total-no"/>
+                <xs:element minOccurs="0" ref="us-code-total-no"/>
+                <xs:element maxOccurs="unbounded" minOccurs="0" ref="international-code"/>
+                <xs:element maxOccurs="unbounded" minOccurs="0" ref="us-code"/>
+                <xs:element minOccurs="0" ref="status-code"/>
+                <xs:element minOccurs="0" ref="status-date"/>
+                <xs:element minOccurs="0" ref="first-use-anywhere-date"/>
+                <xs:element minOccurs="0" ref="first-use-in-commerce-date"/>
+                <xs:element minOccurs="0" ref="primary-code"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="international-code-total-no" type="xs:string"/>
+    <xs:element name="us-code-total-no" type="xs:string"/>
+    <xs:element name="international-code" type="xs:string"/>
+    <xs:element name="us-code" type="xs:string"/>
+    <xs:element name="first-use-anywhere-date" type="xs:string"/>
+    <xs:element name="first-use-in-commerce-date" type="xs:string"/>
+    <xs:element name="primary-code" type="xs:string"/>
+    <xs:element name="correspondent">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element minOccurs="0" ref="address-1"/>
+                <xs:element minOccurs="0" ref="address-2"/>
+                <xs:element minOccurs="0" ref="address-3"/>
+                <xs:element minOccurs="0" ref="address-4"/>
+                <xs:element minOccurs="0" ref="address-5"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="address-1" type="xs:string"/>
+    <xs:element name="address-2" type="xs:string"/>
+    <xs:element name="address-3" type="xs:string"/>
+    <xs:element name="address-4" type="xs:string"/>
+    <xs:element name="address-5" type="xs:string"/>
+    <xs:element name="case-file-owners">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element maxOccurs="unbounded" minOccurs="0" ref="case-file-owner"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="case-file-owner">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element minOccurs="0" ref="entry-number"/>
+                <xs:element minOccurs="0" ref="party-type"/>
+                <xs:element minOccurs="0" ref="nationality"/>
+                <xs:element minOccurs="0" ref="legal-entity-type-code"/>
+                <xs:element minOccurs="0" ref="entity-statement"/>
+                <xs:element minOccurs="0" ref="party-name"/>
+                <xs:element minOccurs="0" ref="address-1"/>
+                <xs:element minOccurs="0" ref="address-2"/>
+                <xs:element minOccurs="0" ref="city"/>
+                <xs:element minOccurs="0" ref="state"/>
+                <xs:element minOccurs="0" ref="country"/>
+                <xs:element minOccurs="0" ref="other"/>
+                <xs:element minOccurs="0" ref="postcode"/>
+                <xs:element minOccurs="0" ref="dba-aka-text"/>
+                <xs:element minOccurs="0" ref="composed-of-statement"/>
+                <xs:element maxOccurs="unbounded" minOccurs="0" ref="name-change-explanation"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="party-type" type="xs:string"/>
+    <xs:element name="nationality">
+        <xs:complexType>
+            <xs:choice>
+                <xs:element ref="state"/>
+                <xs:element ref="country"/>
+                <xs:element ref="other"/>
+            </xs:choice>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="legal-entity-type-code" type="xs:string"/>
+    <xs:element name="entity-statement" type="xs:string"/>
+    <xs:element name="party-name" type="xs:string"/>
+    <xs:element name="city" type="xs:string"/>
+    <xs:element name="state" type="xs:string"/>
+    <xs:element name="other" type="xs:string"/>
+    <xs:element name="postcode" type="xs:string"/>
+    <xs:element name="dba-aka-text" type="xs:string"/>
+    <xs:element name="composed-of-statement" type="xs:string"/>
+    <xs:element name="name-change-explanation" type="xs:string"/>
+    <xs:element name="design-searches">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element maxOccurs="unbounded" minOccurs="0" ref="design-search"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="design-search">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element minOccurs="0" ref="code"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="international-registration">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="international-registration-number"/>
+                <xs:element ref="international-registration-date"/>
+                <xs:element ref="international-publication-date"/>
+                <xs:element ref="international-renewal-date"/>
+                <xs:element ref="auto-protection-date"/>
+                <xs:element minOccurs="0" ref="international-death-date"/>
+                <xs:element ref="international-status-code"/>
+                <xs:element ref="international-status-date"/>
+                <xs:element ref="priority-claimed-in"/>
+                <xs:element minOccurs="0" ref="priority-claimed-date"/>
+                <xs:element ref="first-refusal-in"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="international-registration-number" type="xs:string"/>
+    <xs:element name="international-registration-date" type="xs:string"/>
+    <xs:element name="international-publication-date" type="xs:string"/>
+    <xs:element name="international-renewal-date" type="xs:string"/>
+    <xs:element name="auto-protection-date" type="xs:string"/>
+    <xs:element name="international-death-date" type="xs:string"/>
+    <xs:element name="international-status-code" type="xs:string"/>
+    <xs:element name="international-status-date" type="xs:string"/>
+    <xs:element name="priority-claimed-in" type="xs:string"/>
+    <xs:element name="priority-claimed-date" type="xs:string"/>
+    <xs:element name="first-refusal-in" type="xs:string"/>
+    <xs:element name="madrid-international-filing-requests">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element maxOccurs="unbounded" ref="madrid-international-filing-record"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="madrid-international-filing-record">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="entry-number"/>
+                <xs:element ref="reference-number"/>
+                <xs:element ref="original-filing-date-uspto"/>
+                <xs:element minOccurs="0" ref="international-registration-number"/>
+                <xs:element minOccurs="0" ref="international-registration-date"/>
+                <xs:element minOccurs="0" ref="international-status-code"/>
+                <xs:element minOccurs="0" ref="international-status-date"/>
+                <xs:element minOccurs="0" ref="irregularity-reply-by-date"/>
+                <xs:element minOccurs="0" ref="international-renewal-date"/>
+                <xs:element minOccurs="0" ref="madrid-history-events"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="reference-number" type="xs:string"/>
+    <xs:element name="original-filing-date-uspto" type="xs:string"/>
+    <xs:element name="irregularity-reply-by-date" type="xs:string"/>
+    <xs:element name="madrid-history-events">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element maxOccurs="unbounded" ref="madrid-history-event"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="madrid-history-event">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="code"/>
+                <xs:element ref="date"/>
+                <xs:element ref="description-text"/>
+                <xs:element ref="entry-number"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>
